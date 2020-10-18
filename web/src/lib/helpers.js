@@ -45,3 +45,14 @@ export function toPlainText (blocks) {
     })
     .join('\n\n')
 }
+
+export function debounce(fn, ms) {
+  let timer;
+  return () => {
+    clearTimeout(timer) 
+    timer = setTimeout(() => {
+      timer = null;
+      fn.apply(this, arguments)
+    }, ms)
+  }
+}
