@@ -1,19 +1,19 @@
 // Load variables from `.env` as soon as possible
 require('dotenv').config({
-  path: `.env.${process.env.NODE_ENV || 'development'}`
-})
+  path: `.env.${process.env.NODE_ENV || 'development'}`,
+});
 
-const clientConfig = require('./client-config')
+const clientConfig = require('./client-config');
 
-const isProd = process.env.NODE_ENV === 'production'
+const isProd = process.env.NODE_ENV === 'production';
 
 module.exports = {
   siteMetadata: {
-    title: "Eddie Cleary",
+    title: 'Eddie Cleary',
     description: `Eddie Cleary's portfolio website`,
     author: 'Eddie Cleary',
     siteUrl: 'https://eddiecleary.com',
-    image: 'og.jpg'
+    image: 'og.jpg',
   },
   plugins: [
     'gatsby-plugin-postcss',
@@ -30,19 +30,19 @@ module.exports = {
         ...clientConfig.sanity,
         token: process.env.SANITY_READ_TOKEN,
         watchMode: !isProd,
-        overlayDrafts: !isProd
-      }
+        overlayDrafts: !isProd,
+      },
     },
     'gatsby-source-sanity-transform-images',
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          `Roboto Slab\:700`,
-          `Ubuntu\:400` // you can also specify font weights and styles
+          `Roboto Slab\:700,300`,
+          `Ubuntu\:400`, // you can also specify font weights and styles
         ],
-        display: 'swap'
-      }
+        display: 'swap',
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
@@ -51,5 +51,5 @@ module.exports = {
         path: `${__dirname}/src/`,
       },
     },
-  ]
-}
+  ],
+};

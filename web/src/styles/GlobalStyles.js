@@ -10,11 +10,17 @@ const GlobalStyles = createGlobalStyle`
     --color-accent: #18A0FB;
 
     --section-divider: 15rem;
+    --text-width: 33rem;
 
-    @custom-media --media-480 (min-width: 480px);
-    @custom-media --media-768 (max-width: 768px);
-    @custom-media --media-992 (min-width: 992px);
-    @custom-media --media-1200 (min-width: 1200px);
+    @media (min-width: 768px) {
+      --text-width: 48rem;
+      --section-divider: 18rem;
+    }
+
+    @media (min-width: 992px) {
+      --text-width: 53.5rem;
+      --section-divider: 22rem;
+    }
   }
   html {
     height: 100%;
@@ -47,10 +53,25 @@ const GlobalStyles = createGlobalStyle`
   }
   .container {
     padding: 0 1.5rem;
+
+    @media (min-width: 480px) {
+      padding: 0 3rem;
+    }
+
+    @media (min-width: 768px) {
+      padding: 0 5.4rem;
+    }
+
+    @media (min-width: 1200px) {
+      max-width: 1100px;
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
   a {
     color: var(--color-light);
     text-decoration: none;
+    transition: all 0.3s ease;
   }
   .btn {
     border: 2px solid transparent;
@@ -64,6 +85,10 @@ const GlobalStyles = createGlobalStyle`
     &.outline {
       border-color: var(--color-accent);
       padding: 7px 22px;
+
+      @media (min-width: 768px) {
+        padding: 12px 30px;
+      }
     }
 
     &.filled {
@@ -71,17 +96,52 @@ const GlobalStyles = createGlobalStyle`
       background-color: var(--color-accent);
       color: var(--color-dark);
       padding: 7px 22px;
+
+      &:hover {
+        transform: scale(1.03);
+      }
+
+      @media (min-width: 768px) {
+        padding: 12px 30px;
+      }
     }
   }
   .btnWrap {
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
     .btn:first-of-type {
-      margin-right: 3.2rem;
+      margin-right: 2.5rem;
     }
   }
-`
+  .mobile {
+    display: block;
+    @media (min-width: 768px) {
+      display: none;
+    }
+  }
+  .tab {
+    @media (min-width: 768px) {
+      display: block;
+    }
+    @media (min-width: 992px) {
+      display: none;
+    }
+  }
+  .desktop {
+    @media (min-width: 992px) {
+      display: block;
+    }
+    @media (min-width: 1200px) {
+      display: none;
+    }
+  }
+  .wide {
+    @media (min-width: 1200px) {
+      display: block;
+    }
+  }
+`;
 
 export default GlobalStyles;
