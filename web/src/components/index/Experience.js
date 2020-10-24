@@ -61,7 +61,7 @@ export default function Experience() {
   }, []);
 
   return (
-    <ExperienceStyles>
+    <ExperienceStyles id="experience">
       <div className="container">
         <h2>My Experience</h2>
         <div className="linecontainer">

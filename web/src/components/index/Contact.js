@@ -1,8 +1,38 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
+import { navigate } from 'gatsby';
 import Socialicons from '../Socialicons';
 
 export default function Contact() {
+  const [formInfo, setFormInfo] = useState({});
+
+  function encode(data) {
+    return Object.keys(data)
+      .map(
+        (key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`
+      )
+      .join('&');
+  }
+
+  const handleChange = (e) => {
+    setFormInfo({ ...formInfo, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode({
+        'form-name': form.getAttribute('name'),
+        ...formInfo,
+      }),
+    })
+      .then(() => navigate(form.getAttribute('action')))
+      .catch((error) => alert(error));
+  };
+
   return (
     <ContactStyles id="contact">
       <div className="container">
@@ -15,20 +45,38 @@ export default function Contact() {
           <a href="mailto: eddie@eddiecleary.com">eddie@eddiecleary.com</a>
           <Socialicons />
         </div>
-        <form>
+        <form
+          name="contact"
+          method="post"
+          data-netlify="true"
+          data-netlify-honeypot="bot-field"
+          onSubmit={handleSubmit}
+          action="/resume/"
+        >
+          <input type="hidden" name="form-name" value="contact" />
+          <p hidden>
+            <label hidden htmlFor="bot-field">
+              <input name="bot-field" onChange={handleChange} />
+            </label>
+          </p>
           <div className="flexWrap">
             <label className="half" htmlFor="name">
               Name:
-              <input type="text" name="name" id="name" />
+              <input type="text" name="name" onChange={handleChange} />
             </label>
             <label className="half" htmlFor="email">
               Email:
-              <input type="email" name="email" id="email" />
+              <input type="email" name="email" onChange={handleChange} />
             </label>
           </div>
           <label className="full" htmlFor="message">
             Message:
-            <textarea name="message" id="message" cols="30" rows="12" />
+            <textarea
+              name="message"
+              cols="30"
+              rows="12"
+              onChange={handleChange}
+            />
           </label>
           <button type="submit">Send</button>
         </form>

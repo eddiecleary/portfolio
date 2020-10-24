@@ -17,7 +17,7 @@ export default function Hero() {
           <Link className="btn filled" to="#contact">
             Hire me
           </Link>
-          <Link className="btn" to="#portfolio">
+          <Link className="btn" to="#experience">
             Learn more
             <Chevron aria-label="right arrow" className="ml" size="26px" />
           </Link>

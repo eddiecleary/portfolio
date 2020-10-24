@@ -12,7 +12,7 @@ module.exports = {
     title: 'Eddie Cleary',
     description: `Eddie Cleary's portfolio website`,
     author: 'Eddie Cleary',
-    siteUrl: 'https://eddiecleary.com',
+    siteUrl: 'https://www.eddiecleary.com',
     image: 'og.jpg',
   },
   plugins: [
@@ -38,7 +38,7 @@ module.exports = {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          `Roboto Slab\:700,300`,
+          `Roboto Slab\:700,400,300`,
           `Ubuntu\:400`, // you can also specify font weights and styles
         ],
         display: 'swap',

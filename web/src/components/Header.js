@@ -1,4 +1,4 @@
-import React, { useState, useLayoutEffect } from 'react';
+import React, { useState, useLayoutEffect, useEffect } from 'react';
 import styled, { css } from 'styled-components';
 import Img from 'gatsby-image';
 import { Link, graphql, useStaticQuery } from 'gatsby';
@@ -27,13 +27,18 @@ export default function Header() {
   // Check if min-width > 992px every 1 second after user resizes window, if true, setOpen(false) to hide nav
   const isDesktop = useMediaPredicate('(min-width: 992px)');
 
+  // Initialize smooth scroll plugin, calculates header height so does not overshoot on scroll (based on header height, ie desktop/mobile are different)
+  if (typeof window !== 'undefined') {
+    // eslint-disable-next-line global-require
+    require('smooth-scroll')('a[href*="#"]', {
+      header: 'header',
+    });
+  }
+
   useLayoutEffect(() => {
     const dbHandleResize = debounce(function handleResize() {
       if (isDesktop) {
         setOpen(false);
-        console.log('is desktop');
-      } else {
-        console.log('is mobile');
       }
     }, 1000);
 
@@ -44,6 +49,7 @@ export default function Header() {
     };
   });
 
+  // Make sure nav closes after user selects link, passed down as prop to nav component & called there
   const handleClick = () => {
     setOpen(false);
   };
@@ -111,6 +117,14 @@ const HeaderStyles = styled.header`
 
     a {
       margin: 3.1rem 0;
+    }
+  }
+
+  .hamburger-react {
+    &:hover {
+      div {
+        background-color: var(--color-accent) !important;
+      }
     }
   }
 

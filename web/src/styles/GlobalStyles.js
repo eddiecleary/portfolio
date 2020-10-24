@@ -24,7 +24,6 @@ const GlobalStyles = createGlobalStyle`
   }
   html {
     height: 100%;
-    scroll-behavior: smooth;
   }
   body {
     position: relative;
@@ -41,12 +40,11 @@ const GlobalStyles = createGlobalStyle`
     scrollbar-color: pink;
   }
   body::-webkit-scrollbar-track {
-    background: purple;
+    background: var(--color-dark);
   }
   body::-webkit-scrollbar-thumb {
-    background-color: pink;
+    background-color: var(--color-accent);
     border-radius: 6px;
-    border: 3px solid white;
   }
   img {
     max-width: 100%;

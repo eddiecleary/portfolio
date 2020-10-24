@@ -8,6 +8,7 @@ const query = graphql`
   query {
     projects: allSanityProject(sort: { fields: publishedAt, order: DESC }) {
       nodes {
+        projecturl
         id
         title
         date: publishedAt(formatString: "MMM YYYY")
@@ -60,7 +61,7 @@ export default function Projects() {
                   </div>
                 ))}
               </div>
-              <a href="#" className="btn filled">
+              <a href={project.projecturl} className="btn filled">
                 View Site{' '}
                 <Chevron aria-label="right arrow" className="ml" size="26px" />
               </a>

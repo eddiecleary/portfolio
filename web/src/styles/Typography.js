@@ -81,8 +81,24 @@ const Typography = createGlobalStyle`
       font-size: 1.44rem;
     }
   }
+  .special {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+    font-size: 2.2rem;
+    color: var(--color-accent);
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    text-align: left;
+
+    @media (min-width: 768px) {
+      font-size: 3rem;
+    }
+  }
   .light {
     font-weight: 300;
+  }
+  .regular {
+    font-weight: 400;
   }
   p{
     margin: 0;

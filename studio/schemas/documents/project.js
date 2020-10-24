@@ -31,6 +31,11 @@ export default {
       }
     },
     {
+      title: 'Project URL',
+      name: 'projecturl',
+      type: 'url'
+    },
+    {
       name: 'mainImage',
       type: 'mainImage',
       title: 'Main image'
