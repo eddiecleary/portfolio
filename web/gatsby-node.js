@@ -1,11 +1,11 @@
-const {isFuture} = require('date-fns')
+const { isFuture } = require('date-fns');
 /**
  * Implement Gatsby's Node APIs in this file.
  *
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
-const {format} = require('date-fns')
+const { format } = require('date-fns');
 
 // async function createBlogPostPages (graphql, actions) {
 //   const {createPage} = actions
@@ -49,3 +49,19 @@ const {format} = require('date-fns')
 // exports.createPages = async ({graphql, actions}) => {
 //   await createBlogPostPages(graphql, actions)
 // }
+
+// exports.onCreateWebpackConfig = ({ actions }) => {
+//   // React-dom is hardcoded as part of react-hot-loader
+//   // in the development server. So we either avoid Preact
+//   // during development or switch to fast-refresh and loose
+//   // hot reloading capabilities.
+//   actions.setWebpackConfig({
+//     resolve: {
+//       alias: {
+//         react: `preact/compat`,
+//         'react-dom': `preact/compat`,
+//         'react-dom/server': `preact/compat`,
+//       },
+//     },
+//   });
+// };

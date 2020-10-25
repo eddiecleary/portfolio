@@ -9,13 +9,13 @@ import {
 export default function Socialicons() {
   return (
     <StyledSocialicons className="socialicons">
-      <a href="https://www.facebook.com">
+      <a aria-label="Facebook" href="https://www.facebook.com">
         <Facebook />
       </a>
-      <a href="https://www.instagram.com">
+      <a aria-label="Instagram" href="https://www.instagram.com">
         <Instagram />
       </a>
-      <a href="https://www.twitter.com">
+      <a aria-label="Twitter" href="https://www.twitter.com">
         <Twitter />
       </a>
     </StyledSocialicons>

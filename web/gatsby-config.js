@@ -19,11 +19,28 @@ module.exports = {
     'gatsby-plugin-postcss',
     'gatsby-plugin-react-helmet',
     'gatsby-transformer-sharp',
+    'gatsby-plugin-preact',
+    'gatsby-plugin-sitemap',
     'gatsby-plugin-sharp',
     'gatsby-plugin-netlify',
     'gatsby-plugin-styled-components',
     'gatsby-plugin-robots-txt',
     'gatsby-plugin-sitemap',
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        name: 'Eddie Cleary',
+        short_name: 'Eddie Cleary',
+        start_url: '/',
+        background_color: '#2d3033',
+        theme_color: '#18a0fb',
+        display: 'standalone',
+        icon: 'static/favicon.png',
+        icon_options: {
+          purpose: 'any maskable',
+        },
+      },
+    },
     {
       resolve: 'gatsby-source-sanity',
       options: {
@@ -35,13 +52,16 @@ module.exports = {
     },
     'gatsby-source-sanity-transform-images',
     {
-      resolve: `gatsby-plugin-google-fonts`,
+      resolve: `gatsby-plugin-google-fonts-with-attributes`,
       options: {
         fonts: [
-          `Roboto Slab\:700,400,300`,
+          `Roboto Slab\:700`,
           `Ubuntu\:400`, // you can also specify font weights and styles
         ],
         display: 'swap',
+        attributes: {
+          rel: 'stylesheet preload prefetch',
+        },
       },
     },
     {

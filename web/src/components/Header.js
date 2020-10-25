@@ -66,7 +66,12 @@ export default function Header() {
               />
             </Link>
             <Nav handleClick={handleClick} />
-            <Hamburger toggled={isOpen} toggle={setOpen} color="#ccc" />
+            <Hamburger
+              label="Show menu"
+              toggled={isOpen}
+              toggle={setOpen}
+              color="#ccc"
+            />
           </div>
         </div>
       </HeaderStyles>

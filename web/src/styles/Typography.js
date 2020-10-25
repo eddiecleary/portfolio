@@ -95,10 +95,18 @@ const Typography = createGlobalStyle`
     }
   }
   .light {
-    font-weight: 300;
+    font-size: 1.5rem;
+
+    @media(min-width: 768px) {
+      font-size: 2.8rem;
+    }
   }
   .regular {
-    font-weight: 400;
+    font-size: 1.8rem;
+
+    @media(min-width: 768px) {
+      font-size: 3.1rem;
+    }
   }
   p{
     margin: 0;

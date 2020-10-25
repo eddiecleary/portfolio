@@ -12,7 +12,7 @@ export default function Hero() {
         <h1>
           eddie cleary is a <br className="tab" /> front-End developer
         </h1>
-        <h3 className="h3 light">looking for remote opportunities</h3>
+        <h2 className="h3 light">looking for remote opportunities</h2>
         <div className="btnWrap">
           <Link className="btn filled" to="#contact">
             Hire me

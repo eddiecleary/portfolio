@@ -27,7 +27,7 @@ export default function About() {
             alt="Portrait shot of Eddie Cleary smiling"
           />
           <div className="textWrap">
-            <h4 className="h3 light">Front-End Web Developer</h4>
+            <h3 className="h3 light">Front-End Web Developer</h3>
             <p>
               I never knew web development could be so fun. Initially, it was
               frustrating but once I got the hang of it and “saw the matrix” I
