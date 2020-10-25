@@ -95,6 +95,7 @@ const HeaderStyles = styled.header`
   .gatsby-image-wrapper {
     width: 135px;
     height: auto;
+    outline: none;
   }
 
   nav.nav {
