@@ -19,7 +19,6 @@ module.exports = {
     'gatsby-plugin-postcss',
     'gatsby-plugin-react-helmet',
     'gatsby-transformer-sharp',
-    'gatsby-plugin-preact',
     'gatsby-plugin-sitemap',
     'gatsby-plugin-sharp',
     'gatsby-plugin-netlify',
