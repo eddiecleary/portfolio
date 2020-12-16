@@ -70,3 +70,9 @@ yarn.lock
 # Secrets
 .env*
 
+
+# Local Netlify folder
+.netlify
+
+# npm gsap
+.npmrc
