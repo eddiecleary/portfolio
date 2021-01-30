@@ -13,4 +13,4 @@
 # npm
 .npmrc
 
-original-assets/
+.env*
